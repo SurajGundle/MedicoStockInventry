@@ -4,13 +4,15 @@ import java.util.List;
 
 import com.medical.entity.Stock;
 import com.medical.exception.StockException;
+import com.medical.requestDTO.StockRequestDTO;
+import com.medical.responseDTO.StockResponseDTO;
 
 public interface StockService {
 	
-	Stock addStock(Stock stock ) throws StockException;
-	Stock getStockById(Integer stockId) throws StockException;
+	StockResponseDTO addStock(StockRequestDTO stockRequestDTO ) throws StockException;
+	StockResponseDTO getStockById(Integer stockId) throws StockException;
 	String deleteStockById(Integer stockId) throws StockException;
-	Stock updateStockById(Integer id,Stock stock) throws StockException;
-	List<Stock> getAllStock();
+	StockResponseDTO updateStockById(Integer id,StockRequestDTO stockRequestDTO) throws StockException;
+	List<StockResponseDTO> getAllStock();
 
 }

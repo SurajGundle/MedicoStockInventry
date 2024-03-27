@@ -12,6 +12,7 @@ public class StockResponseDTO {
 	private LocalDateTime lastUpdated;
 	
 	
+	
 
 
 }
