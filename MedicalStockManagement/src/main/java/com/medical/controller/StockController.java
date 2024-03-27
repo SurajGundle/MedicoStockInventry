@@ -2,6 +2,7 @@ package com.medical.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,11 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.medical.entity.Stock;
 import com.medical.responseDTO.StockResponseDTO;
+import com.medical.service.StockService;
 
 @RestController
 @RequestMapping("/stock")
 public class StockController {
-	
+	@Autowired
+	StockService stockService;
 	@PostMapping("/addNewStock")
 	public StockResponseDTO saveNewStock(@RequestBody Stock stock) {
 		return null;
