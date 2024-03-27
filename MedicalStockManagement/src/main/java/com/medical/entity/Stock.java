@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,11 +22,11 @@ public class Stock {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer stockId;
-//	private String stockName;
+	private String stockName;
 	private Integer quantityAvailable;
 	private LocalDateTime lastUpdated;
-	@OneToMany()
-	private List<Product1> products;
 	
+	 @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL)
+	 private List<Product> products = new ArrayList<>();
 
 }
