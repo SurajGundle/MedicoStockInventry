@@ -1,4 +1,4 @@
-package com.medical.Exception;
+package com.medical.exception;
 
 public class ProductException extends Exception {
        public ProductException() {

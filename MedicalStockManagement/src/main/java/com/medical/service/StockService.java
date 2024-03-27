@@ -10,7 +10,7 @@ public interface StockService {
 	Stock addStock(Stock stock ) throws StockException;
 	Stock getStockById(Integer stockId) throws StockException;
 	String deleteStockById(Integer stockId) throws StockException;
-	Stock updateStockById(Integer id,Stock stock);
+	Stock updateStockById(Integer id,Stock stock) throws StockException;
 	List<Stock> getAllStock();
 
 }

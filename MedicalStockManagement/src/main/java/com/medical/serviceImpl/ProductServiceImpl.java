@@ -3,12 +3,16 @@ package com.medical.serviceImpl;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.medical.Exception.ProductException;
+import com.medical.dto.ProductDto;
 import com.medical.entity.Product;
+import com.medical.exception.ProductException;
 import com.medical.repository.ProductRepository;
+import com.medical.requestDTO.ProductRequestDto;
+import com.medical.responseDTO.ProductResponseDto;
 import com.medical.service.ProductService;
 
 @Service
@@ -16,6 +20,9 @@ public class ProductServiceImpl  implements ProductService{
 	
 @Autowired
  private ProductRepository productRepository;
+
+@Autowired
+private ModelMapper modelMappper;
 
 	@Override
 	public Product getProductById(Integer productId) throws ProductException {
@@ -87,4 +94,16 @@ public class ProductServiceImpl  implements ProductService{
 		return list;
 	}
 
-}
+
+
+	    
+	
+	    
+	}
+
+	
+
+
+	
+
+		
