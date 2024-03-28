@@ -20,18 +20,18 @@ import lombok.NoArgsConstructor;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer productId;
-	    private String name;
-	    private String description;
-	    private String manufacturer;
-	    private LocalDate expiryDate;
-	    private double unitPrice;
-	    private int quantityInStock;
-	    private String category;
-	    private String batchNumber;
-	    
-	    @ManyToOne
-	    @JoinColumn(name = "stock_id") 
-	    private Stock stock;
+	private Integer productId;
+    private String name;
+    private String description;
+    private String manufacturer;
+    private LocalDate expiryDate;
+    private double unitPrice;
+    private int quantityInStock;
+    private String category;
+    private String batchNumber;
+ 
+    @ManyToOne
+    @JoinColumn(name = "stock_id") 
+    private Stock stock; 
 	    
 }

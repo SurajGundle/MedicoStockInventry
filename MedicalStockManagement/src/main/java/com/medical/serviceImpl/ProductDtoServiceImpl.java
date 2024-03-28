@@ -63,7 +63,6 @@ public class ProductDtoServiceImpl implements ProductDtoService {
 
 	    Product existingProduct = opt.get();
 	    existingProduct.setName(productRequestDto.getName());
-	    existingProduct.setUnitPrice(productRequestDto.getUnitPrice());
 
 	    productRepository.save(existingProduct);
 	    

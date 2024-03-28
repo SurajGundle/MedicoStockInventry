@@ -1,7 +1,5 @@
 package com.medical.mapper;
 
-import java.time.LocalDate;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,14 +24,20 @@ public class ModelMapperConfig {
         modelMapper.createTypeMap(ProductRequestDto.class, Product.class)
                 .addMapping(ProductRequestDto::getName, Product::setName)
                 .addMapping(ProductRequestDto::getQuantityInStock, Product:: setQuantityInStock)
-                .addMapping(ProductRequestDto::getUnitPrice, Product::setUnitPrice)
+                .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate)
+                .addMapping(ProductRequestDto::getStock, Product::setStock)
+//                .addMapping(ProductRequestDto::getUnitPrice, Product::setUnitPrice)
                 .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate);
 
         // Mapping from Product to ProductResponseDto
         modelMapper.createTypeMap(Product.class, ProductResponseDto.class)
                 .addMapping(Product::getProductId, ProductResponseDto::setProductId)
                 .addMapping(Product::getName, ProductResponseDto::setName)
-                .addMapping(Product::getUnitPrice, ProductResponseDto::setUnitPrice)
+                .addMapping(Product::getQuantityInStock, ProductResponseDto::setQuantityInStock)
+                .addMapping(Product::getExpiryDate, ProductResponseDto::setExpiryDate)
+                .addMapping(Product::getStock, ProductResponseDto::setStock)
+                
+//                .addMapping(Product::getUnitPrice, ProductResponseDto::setUnitPrice)
                 .addMapping(Product::getExpiryDate, ProductResponseDto::setExpiryDate);
         
         // Mapping from StockRequestDTO to Stock
