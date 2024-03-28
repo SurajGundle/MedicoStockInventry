@@ -17,10 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StockRequestDTO {
-	
-	
 
-	
 	private String stockName;
 	private Integer quantityAvailable;
 	private LocalDateTime lastUpdated;

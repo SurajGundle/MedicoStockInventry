@@ -22,5 +22,6 @@ public class ProductRequestDto {
 	    private String category;
 	    private String batchNumber;
 	    private Stock stock;
+	    
 	  
 }
