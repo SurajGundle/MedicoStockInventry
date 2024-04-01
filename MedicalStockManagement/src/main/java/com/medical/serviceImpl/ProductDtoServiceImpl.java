@@ -66,10 +66,24 @@ public class ProductDtoServiceImpl implements ProductDtoService {
 	    Product existingProduct = opt.get();
 	    existingProduct.setName(productRequestDto.getName());
 	    existingProduct.setUnitPrice(productRequestDto.getUnitPrice());
-
+	    existingProduct.setExpiryDate(productRequestDto.getExpiryDate());
+	    existingProduct.setQuantityInStock(productRequestDto.getQuantityInStock());
 	    productRepository.save(existingProduct);
 	    
 	    return modelMapper.map(existingProduct, ProductResponseDto.class);
+	}
+
+	@Override
+	public String deleteProductById(Integer productId) throws ProductException {
+		// TODO Auto-generated method stub
+		 Optional<Product> opt = productRepository.findById(productId);
+		    if (opt.isEmpty()) {
+		        throw new ProductException("Product with ID " + productId + " not available");
+		    }
+		   	productRepository.deleteById(productId);
+			return "product with productId"+productId+" delete successfully";
+		
+	
 	}
 
 

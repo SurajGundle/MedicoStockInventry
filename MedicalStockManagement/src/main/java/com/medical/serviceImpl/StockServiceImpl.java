@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.medical.entity.Product;
 import com.medical.entity.Stock;
 import com.medical.exception.StockException;
 import com.medical.repository.StockRepository;
@@ -85,6 +86,17 @@ public class StockServiceImpl implements StockService {
 		
 	}
 	
-    
-    }
+	
+	    public List<Product> getProductsByStockId(Integer stockId) throws StockException {
+	        Optional<Stock> optionalStock = stockRepository.findById(stockId);
+	        if (optionalStock.isPresent()) {
+	            Stock stock = optionalStock.get();
+	            return stock.getProducts();
+	        } else {
+	            throw new StockException("Stock not found with id: " + stockId);
+	        }
+	    }
+	}
 
+    
+    

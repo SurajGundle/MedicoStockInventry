@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.medical.entity.Product;
 import com.medical.entity.Stock;
 import com.medical.exception.StockException;
 import com.medical.requestDTO.StockRequestDTO;
@@ -49,5 +50,8 @@ public class StockController {
 		return new ResponseEntity<>(stockService.getAllStock(),HttpStatus.FOUND);
 	}
 	
-
+    @GetMapping("/getProduct/{stockId}")
+	public ResponseEntity<List<Product>> getProductsByStockId(@PathVariable("stockId")Integer stockId) throws StockException {
+		return new ResponseEntity<>(stockService.getProductsByStockId(stockId),HttpStatus.OK);
+	}
 }

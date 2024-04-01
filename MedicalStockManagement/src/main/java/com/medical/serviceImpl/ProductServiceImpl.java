@@ -70,9 +70,9 @@ private ModelMapper modelMappper;
 		}
 
 
-
+  
 	@Override
-	public String deleteUserById(Integer productId) throws ProductException{
+	public String deleteProductById(Integer productId) throws ProductException{
 		// TODO Auto-generated method stub
 		Optional<Product> opt=productRepository.findById(productId);
 		if(opt.isEmpty()) {
@@ -80,7 +80,7 @@ private ModelMapper modelMappper;
 			
 		}
 	     	productRepository.deleteById(productId);
-		return "product with productId"+productId+" delete successfully";
+		return "product with productId : "+" : "+ productId+" delete successfully";
 	}
 
 	

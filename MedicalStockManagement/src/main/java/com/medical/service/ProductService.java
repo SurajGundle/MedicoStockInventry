@@ -13,7 +13,7 @@ public interface ProductService {
 	Product UpdateProductById(Integer productId, Product product)throws ProductException;
 
 	Product addProduct(Product product) throws ProductException; 
-	String deleteUserById(Integer productId)throws ProductException;
+	String deleteProductById(Integer productId)throws ProductException;
 	List<Product> getAllProduct() throws ProductException; 
 	
 	
