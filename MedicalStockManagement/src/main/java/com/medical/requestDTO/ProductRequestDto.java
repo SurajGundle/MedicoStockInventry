@@ -21,12 +21,9 @@ public class ProductRequestDto {
 	    private int quantityInStock;
 	    private String category;
 	    private String batchNumber;
-<<<<<<< HEAD
+
 	    private Integer stockId;
 	   // private Stock stock;
-=======
-	    private Stock stock;
-	    
->>>>>>> 2b2432edd8838d0c61d2d79acbc13a73b572ae75
+
 	  
 }
