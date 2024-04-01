@@ -54,11 +54,37 @@ public class ProductController {
 		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
 		  
 	  }
+	  
+	/*  private Product convertToEntity(ProductRequestDto requestDto) {
+	        Product product = new Product();
+	        product.setName(requestDto.getName());
+	        product.setDescription(requestDto.getDescription());
+	        product.setManufacturer(requestDto.getManufacturer());
+	        product.setExpiryDate(requestDto.getExpiryDate());
+	        product.setUnitPrice(requestDto.getUnitPrice());
+	        product.setQuantityInStock(requestDto.getQuantityInStock());
+	        product.setCategory(requestDto.getCategory());
+	        product.setBatchNumber(requestDto.getBatchNumber());
+	      //  product.setStockId(requestDto.getStockId());
+	        product.setStockId(requestDto.getStockId());
+	        return product;
+	    }
+
+	   private ProductResponseDto convertToResponseDto(Product product) {
+	        ProductResponseDto dto = new ProductResponseDto();
+	        dto.setProductId(product.getProductId());
+	        dto.setName(product.getName());
+	        dto.setQuantityInStock(product.getQuantityInStock());
+	        dto.setUnitPrice(product.getUnitPrice());
+	        dto.setExpiryDate(product.getExpiryDate());
+	       
+	        dto.setStockId(product.getStockId());
+	        return dto;
 	   
-	}
+	}*/
 
       
       
-
+}
       
 

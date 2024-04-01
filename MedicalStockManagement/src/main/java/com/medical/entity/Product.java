@@ -30,8 +30,9 @@ public class Product {
 	    private String category;
 	    private String batchNumber;
 	    
-	    @ManyToOne
-	    @JoinColumn(name = "stock_id") 
-	    private Stock stock;
+	   // @ManyToOne
+	    @JoinColumn(name = "stockId") 
+	 //   private Stock stock;
+	    private Integer stockId;
 	    
 }

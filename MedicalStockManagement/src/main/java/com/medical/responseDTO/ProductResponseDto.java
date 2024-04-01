@@ -13,6 +13,7 @@ public class ProductResponseDto {
 	    private int quantityInStock;
 	    private double unitPrice;
 	    private LocalDate expiryDate;
-	    private Stock stock;
+	   // private Stock stock;
+	    private Integer stockId;
 
 }

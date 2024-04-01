@@ -27,19 +27,22 @@ public class ModelMapperConfig {
                 .addMapping(ProductRequestDto::getName, Product::setName)
                 .addMapping(ProductRequestDto::getQuantityInStock, Product:: setQuantityInStock)
                 .addMapping(ProductRequestDto::getUnitPrice, Product::setUnitPrice)
-                .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate);
+                .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate)
+                .addMapping(ProductRequestDto::getStockId, Product::setStockId);
 
         // Mapping from Product to ProductResponseDto
         modelMapper.createTypeMap(Product.class, ProductResponseDto.class)
                 .addMapping(Product::getProductId, ProductResponseDto::setProductId)
                 .addMapping(Product::getName, ProductResponseDto::setName)
                 .addMapping(Product::getUnitPrice, ProductResponseDto::setUnitPrice)
-                .addMapping(Product::getExpiryDate, ProductResponseDto::setExpiryDate);
+                .addMapping(Product::getExpiryDate, ProductResponseDto::setExpiryDate)
+               .addMapping(Product::getStockId, ProductResponseDto::setStockId);
         
         // Mapping from StockRequestDTO to Stock
         modelMapper.createTypeMap(StockRequestDTO.class, Stock.class)
                 .addMapping(StockRequestDTO::getQuantityAvailable, Stock::setQuantityAvailable)
                 .addMapping(StockRequestDTO::getLastUpdated, Stock::setLastUpdated);
+                
               
         
         //Mapping from stock to StockResponseDTO
@@ -47,11 +50,12 @@ public class ModelMapperConfig {
         .addMapping(Stock::getStockId, StockResponseDTO::setStockId)
         .addMapping(Stock::getQuantityAvailable, StockResponseDTO::setQuantityAvailable)
         .addMapping(Stock::getLastUpdated, StockResponseDTO::setLastUpdated);
-
+        
          
         return modelMapper;
     
     }
+
 }
 
 

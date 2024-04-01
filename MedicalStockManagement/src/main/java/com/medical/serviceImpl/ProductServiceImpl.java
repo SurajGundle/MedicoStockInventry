@@ -29,7 +29,7 @@ private ModelMapper modelMappper;
 		// TODO Auto-generated method stub
 		Optional<Product>opt=productRepository.findById(productId);
 		if(opt.isEmpty()) {
-			throw new ProductException(productId+ " productId is already presemt");
+			throw new ProductException(productId+ " productId is already present");
 		}
 		return opt.get();
 	}
@@ -95,11 +95,14 @@ private ModelMapper modelMappper;
 	}
 
 
+}
+
+
 
 	    
 	
 	    
-	}
+	
 
 	
 

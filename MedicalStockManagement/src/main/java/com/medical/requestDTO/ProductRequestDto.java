@@ -21,6 +21,6 @@ public class ProductRequestDto {
 	    private int quantityInStock;
 	    private String category;
 	    private String batchNumber;
-	    private Stock stock;
+	    private Integer stockId;
 	  
 }
