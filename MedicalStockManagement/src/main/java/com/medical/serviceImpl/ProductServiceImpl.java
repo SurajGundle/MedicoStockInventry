@@ -2,17 +2,11 @@ package com.medical.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
-
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.medical.dto.ProductDto;
 import com.medical.entity.Product;
 import com.medical.exception.ProductException;
 import com.medical.repository.ProductRepository;
-import com.medical.requestDTO.ProductRequestDto;
-import com.medical.responseDTO.ProductResponseDto;
 import com.medical.service.ProductService;
 
 @Service
@@ -21,15 +15,12 @@ public class ProductServiceImpl  implements ProductService{
 @Autowired
  private ProductRepository productRepository;
 
-@Autowired
-private ModelMapper modelMappper;
-
 	@Override
 	public Product getProductById(Integer productId) throws ProductException {
 		// TODO Auto-generated method stub
 		Optional<Product>opt=productRepository.findById(productId);
 		if(opt.isEmpty()) {
-			throw new ProductException(productId+ " productId is already presemt");
+			throw new ProductException(productId+ " productId is already present");
 		}
 		return opt.get();
 	}
@@ -65,9 +56,9 @@ private ModelMapper modelMappper;
 		}
 
 
-
+  
 	@Override
-	public String deleteUserById(Integer productId) throws ProductException{
+	public String deleteProductById(Integer productId) throws ProductException{
 		// TODO Auto-generated method stub
 		Optional<Product> opt=productRepository.findById(productId);
 		if(opt.isEmpty()) {
@@ -75,7 +66,7 @@ private ModelMapper modelMappper;
 			
 		}
 	     	productRepository.deleteById(productId);
-		return "product with productId"+productId+" delete successfully";
+		return "product with productId : "+" : "+ productId+" delete successfully";
 	}
 
 	
@@ -90,11 +81,14 @@ private ModelMapper modelMappper;
 	}
 
 
+}
+
+
 
 	    
 	
 	    
-	}
+	
 
 	
 

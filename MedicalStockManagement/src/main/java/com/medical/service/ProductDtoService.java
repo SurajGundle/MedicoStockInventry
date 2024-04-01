@@ -11,5 +11,7 @@ public interface ProductDtoService {
 	  List<ProductResponseDto> getAllProducts() ;
 	  ProductResponseDto updateProduct(Integer productId, ProductRequestDto productRequestDto) throws ProductException;
 	  ProductResponseDto getProductById(Integer productId) throws ProductException;
+	  String deleteProductById(Integer productId)throws ProductException;
+	  
 
 }

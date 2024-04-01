@@ -1,9 +1,6 @@
 package com.medical.responseDTO;
 
 import java.time.LocalDate;
-
-import com.medical.entity.Stock;
-
 import lombok.Data;
 
 @Data
@@ -11,8 +8,12 @@ public class ProductResponseDto {
 	  private Integer productId;
 	   private String name;
 	    private int quantityInStock;
+	    private String description;
 	    private double unitPrice;
 	    private LocalDate expiryDate;
-	    private Stock stock;
+	    private String category;
+	    private String batchNumber;
+	     private Integer stockId;
+	    //private Stock stock;
 
 }

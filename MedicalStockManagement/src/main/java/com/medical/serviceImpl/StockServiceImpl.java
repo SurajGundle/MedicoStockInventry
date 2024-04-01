@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.medical.entity.Product;
 import com.medical.entity.Stock;
 import com.medical.exception.StockException;
 import com.medical.repository.StockRepository;
@@ -27,6 +28,8 @@ public class StockServiceImpl implements StockService {
 	@Override
 	public StockResponseDTO addStock(StockRequestDTO stockRequestDTO) throws StockException {
 		Stock stock= modelMapper.map(stockRequestDTO, Stock.class);
+		// for (Product product : stock.getProducts()) {
+			//  }
 		Stock saved=stockRepository.save(stock);
 		return modelMapper.map(saved, StockResponseDTO.class);
 	}
@@ -45,9 +48,12 @@ public class StockServiceImpl implements StockService {
 		if(stockId ==null || stockRepository.findById(stockId).isEmpty()) {
 			throw new StockException("Stock id either null or not present to delete");
 		}
-		
+		try {
 		 stockRepository.deleteById(stockId);
-		 
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		 return "deleted stock with id :"+stockId+" successfully";
 	}
 
@@ -84,4 +90,17 @@ public class StockServiceImpl implements StockService {
 		return list;
 		
 	}
-}
+	
+	@Override
+	    public List<Product> getProductsByStockId(Integer stockId) throws StockException {
+	        Optional<Stock> opt = stockRepository.findById(stockId);
+	        if (opt.isEmpty()) {
+	        	 throw new StockException("Stock not found with id: " + stockId);
+	        }
+	            Stock stock = opt.get();
+	            return stock.getProducts();
+	        }
+	}
+
+    
+    
