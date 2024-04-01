@@ -61,9 +61,13 @@ public class ProductDtoServiceImpl implements ProductDtoService {
 
 	    Product existingProduct = opt.get();
 	    existingProduct.setName(productRequestDto.getName());
+<<<<<<< HEAD
 	    existingProduct.setUnitPrice(productRequestDto.getUnitPrice());
 	    existingProduct.setExpiryDate(productRequestDto.getExpiryDate());
 	    existingProduct.setQuantityInStock(productRequestDto.getQuantityInStock());
+=======
+
+>>>>>>> 2b2432edd8838d0c61d2d79acbc13a73b572ae75
 	    productRepository.save(existingProduct);
 	    
 	    return modelMapper.map(existingProduct, ProductResponseDto.class);

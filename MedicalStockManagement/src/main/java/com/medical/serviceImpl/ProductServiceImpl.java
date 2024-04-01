@@ -35,13 +35,8 @@ public class ProductServiceImpl  implements ProductService{
 		 }
 			 Product existProduct=opt.get();
 			 existProduct.setName(updateProduct.getName());
-			 existProduct.setBatchNumber(updateProduct.getBatchNumber());
-			 existProduct.setCategory(updateProduct.getCategory());
-			 existProduct.setDescription(updateProduct.getDescription());
 			 existProduct.setExpiryDate(updateProduct.getExpiryDate());
-			 existProduct.setManufacturer(updateProduct.getManufacturer());
 			 existProduct.setQuantityInStock(updateProduct.getQuantityInStock());
-			 existProduct.setUnitPrice(updateProduct.getUnitPrice());
 			 return productRepository.save(existProduct);
 				
 			  }

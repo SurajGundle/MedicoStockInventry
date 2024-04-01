@@ -22,6 +22,7 @@ public class Stock {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer stockId;
+<<<<<<< HEAD
 	private String stockName;
 	private Integer quantityAvailable;
 	private LocalDateTime lastUpdated;
@@ -29,5 +30,14 @@ public class Stock {
 	@OneToMany(mappedBy = "stockId", cascade = CascadeType.ALL)
 	//@OneToMany(mappedBy="stock",cascade=CascadeType.ALL)
 	 private List<Product> products = new ArrayList<>();
+=======
+    private String stockName;
+    private Integer quantityAvailable;
+    private LocalDateTime lastUpdated;
+
+    
+    @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL)
+    private List<Product> products = new ArrayList<>();
+>>>>>>> 2b2432edd8838d0c61d2d79acbc13a73b572ae75
 
 }
