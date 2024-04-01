@@ -3,7 +3,6 @@ package com.medical.service;
 import java.util.List;
 
 import com.medical.entity.Product;
-import com.medical.entity.Stock;
 import com.medical.exception.StockException;
 import com.medical.requestDTO.StockRequestDTO;
 import com.medical.responseDTO.StockResponseDTO;

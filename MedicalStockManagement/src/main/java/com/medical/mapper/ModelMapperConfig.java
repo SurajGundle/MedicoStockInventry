@@ -1,11 +1,7 @@
 package com.medical.mapper;
-
-import java.time.LocalDate;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import com.medical.entity.Product;
 import com.medical.entity.Stock;
 import com.medical.requestDTO.ProductRequestDto;
@@ -28,16 +24,21 @@ public class ModelMapperConfig {
                 .addMapping(ProductRequestDto::getQuantityInStock, Product:: setQuantityInStock)
                 .addMapping(ProductRequestDto::getUnitPrice, Product::setUnitPrice)
                 .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate)
-                .addMapping(ProductRequestDto::getStockId, Product::setStockId);
-
+              .addMapping(ProductRequestDto::getStockId, Product::setStockId)
+              .addMapping(ProductRequestDto::getDescription, Product::setDescription)
+              .addMapping(ProductRequestDto::getCategory, Product::setCategory);
+              
         // Mapping from Product to ProductResponseDto
         modelMapper.createTypeMap(Product.class, ProductResponseDto.class)
                 .addMapping(Product::getProductId, ProductResponseDto::setProductId)
                 .addMapping(Product::getName, ProductResponseDto::setName)
                 .addMapping(Product::getUnitPrice, ProductResponseDto::setUnitPrice)
                 .addMapping(Product::getExpiryDate, ProductResponseDto::setExpiryDate)
-               .addMapping(Product::getStockId, ProductResponseDto::setStockId);
-        
+                .addMapping(Product::getDescription, ProductResponseDto::setDescription)
+               .addMapping(Product::getStockId, ProductResponseDto::setStockId)
+              .addMapping(Product::getCategory, ProductResponseDto::setCategory);
+            
+
         // Mapping from StockRequestDTO to Stock
         modelMapper.createTypeMap(StockRequestDTO.class, Stock.class)
                 .addMapping(StockRequestDTO::getQuantityAvailable, Stock::setQuantityAvailable)

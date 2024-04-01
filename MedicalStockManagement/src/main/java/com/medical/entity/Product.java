@@ -2,13 +2,12 @@ package com.medical.entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,7 +31,7 @@ public class Product {
 	    
 	   // @ManyToOne
 	    @JoinColumn(name = "stockId") 
-	 //   private Stock stock;
-	    private Integer stockId;
+	   private Integer stockId;
+	    // private Stock stock;
 	    
 }

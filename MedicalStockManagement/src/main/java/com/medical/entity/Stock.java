@@ -26,7 +26,8 @@ public class Stock {
 	private Integer quantityAvailable;
 	private LocalDateTime lastUpdated;
 	
-	 @OneToMany(mappedBy = "stockId", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "stockId", cascade = CascadeType.ALL)
+	//@OneToMany(mappedBy="stock",cascade=CascadeType.ALL)
 	 private List<Product> products = new ArrayList<>();
 
 }

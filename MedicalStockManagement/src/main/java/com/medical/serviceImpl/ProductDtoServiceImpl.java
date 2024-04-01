@@ -7,16 +7,12 @@ import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.medical.dto.ProductDto;
 import com.medical.entity.Product;
-import com.medical.entity.Stock;
 import com.medical.exception.ProductException;
-import com.medical.mapper.ModelMapperConfig;
 import com.medical.repository.ProductRepository;
 import com.medical.requestDTO.ProductRequestDto;
 import com.medical.responseDTO.ProductResponseDto;
-import com.medical.responseDTO.StockResponseDTO;
+
 import com.medical.service.ProductDtoService;
 
 @Service

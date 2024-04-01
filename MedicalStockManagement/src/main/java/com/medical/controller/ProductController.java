@@ -13,15 +13,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.medical.dto.ProductDto;
-import com.medical.entity.Product;
 import com.medical.exception.ProductException;
-import com.medical.exception.StockException;
 import com.medical.requestDTO.ProductRequestDto;
 import com.medical.responseDTO.ProductResponseDto;
 import com.medical.service.ProductDtoService;
-import com.medical.service.ProductService;
+
 
 @RestController
 @RequestMapping("/product")
