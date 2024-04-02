@@ -1,5 +1,6 @@
 package com.medical.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,38 +17,47 @@ import org.springframework.web.bind.annotation.RestController;
 import com.medical.exception.ProductException;
 import com.medical.requestDTO.ProductRequestDto;
 import com.medical.responseDTO.ProductResponseDto;
-import com.medical.service.ProductDtoService;
+
+import com.medical.service.ProductService;
 
 
 @RestController
 @RequestMapping("/product")
 public class ProductController {
 	@Autowired
-	private ProductDtoService productDtoService;
+	private ProductService productService;
      
 	
-	  @PostMapping("/addProduct")
-	    public ResponseEntity<ProductResponseDto> createProduct(@RequestBody ProductRequestDto productRequestDto) {
+	
+	 /*   public ResponseEntity<ProductResponseDto> createProduct(@RequestBody ProductRequestDto productRequestDto) {
 	        ProductResponseDto productResponseDto = productDtoService.createProduct(productRequestDto);
 	           return new ResponseEntity<>(productResponseDto,HttpStatus.OK);
+	    }*/
+	   
+ 
+	  @PostMapping("/addProduct")
+	    public ResponseEntity<List<ProductResponseDto>> addProducts(@RequestBody List<ProductRequestDto> productRequestDtos) {
+	        List<ProductResponseDto> addProduct = productService.createProduct(productRequestDtos);
+	        return new ResponseEntity<>(addProduct, HttpStatus.OK);
 	    }
+
              
 	  @GetMapping("/getProduct/{productId}")
 	  public ResponseEntity<ProductResponseDto>getProductById(@PathVariable("productId")Integer productId) throws ProductException{
-		  ProductResponseDto productResponseDto=productDtoService.getProductById(productId);
+		  ProductResponseDto productResponseDto=productService.getProductById(productId);
 		  return new ResponseEntity<>(productResponseDto,HttpStatus.OK);
 	  }
 	  
 	  @GetMapping("/getAllProducts")
 	  public ResponseEntity<List<ProductResponseDto>>getAllProducts(){
-		  List<ProductResponseDto> list= productDtoService.getAllProducts();
+		  List<ProductResponseDto> list= productService.getAllProducts();
 		  return new ResponseEntity<>(list,HttpStatus.OK);
 	  }
 	  
-	  @PutMapping("/updateProductDto/{productId}")
+	  @PutMapping("/updateProduct/{productId}")
 	  public ResponseEntity<ProductResponseDto>updateProduct(@PathVariable("productId")Integer productId, @RequestBody ProductRequestDto productRequestDto) throws ProductException {
 		 
-		    ProductResponseDto updatedProduct = productDtoService.updateProduct(productId, productRequestDto);
+		    ProductResponseDto updatedProduct = productService.updateProduct(productId, productRequestDto);
 		  
 		return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
 		  
@@ -57,7 +67,7 @@ public class ProductController {
    @DeleteMapping("/deleteProduct/{productId}")
    
 	public ResponseEntity<String> deleteProductById(@PathVariable("productId") Integer productId) throws ProductException {
-		return new ResponseEntity<>(productDtoService.deleteProductById(productId),HttpStatus.OK);
+		return new ResponseEntity<>(productService.deleteProductById(productId),HttpStatus.OK);
 	}
    }
 

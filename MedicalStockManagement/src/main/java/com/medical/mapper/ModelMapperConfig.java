@@ -27,7 +27,11 @@ public class ModelMapperConfig {
                 .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate)
               .addMapping(ProductRequestDto::getStockId, Product::setStockId)
               .addMapping(ProductRequestDto::getDescription, Product::setDescription)
-              .addMapping(ProductRequestDto::getCategory, Product::setCategory);
+              .addMapping(ProductRequestDto::getCategory, Product::setCategory)
+        .addMapping(ProductRequestDto::getStockId, Product::setStockId)
+        .addMapping(ProductRequestDto::getManufacturer, Product::setManufacturer);
+
+             
               
 
         // Mapping from Product to ProductResponseDto
@@ -39,7 +43,10 @@ public class ModelMapperConfig {
                 .addMapping(Product::getDescription, ProductResponseDto::setDescription)
                .addMapping(Product::getStockId, ProductResponseDto::setStockId)
               .addMapping(Product::getCategory, ProductResponseDto::setCategory)
-                .addMapping(Product::getQuantityInStock, ProductResponseDto::setQuantityInStock);
+                .addMapping(Product::getQuantityInStock, ProductResponseDto::setQuantityInStock)
+              .addMapping(Product::getManufacturer, ProductResponseDto::setManufacturer);
+
+        
 
                 
 

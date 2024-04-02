@@ -36,10 +36,14 @@ public class StockServiceImpl implements StockService {
 
 	@Override
 	public StockResponseDTO getStockById(Integer stockId) throws StockException {
-		if(stockId ==null || stockRepository.findById(stockId).isEmpty()) {
+		/*if(stockId ==null || stockRepository.findById(stockId).isEmpty()) {
 			throw new StockException("Stock id either null or not present");
-		}
-		Optional<Stock> opt= stockRepository.findById(stockId);
+		}*/
+		  Optional<Stock> opt = stockRepository.findById(stockId);
+		    if (stockId == null || !opt.isPresent()) {
+		        throw new StockException("Stock id is either null or not present");
+		    }
+		//Optional<Stock> opt= stockRepository.findById(stockId);
 		return modelMapper.map(opt.get(), StockResponseDTO.class);
 	}
 
