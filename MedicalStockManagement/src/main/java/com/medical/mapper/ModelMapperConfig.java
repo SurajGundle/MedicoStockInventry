@@ -25,13 +25,15 @@ public class ModelMapperConfig {
                 .addMapping(ProductRequestDto::getQuantityInStock, Product:: setQuantityInStock)
                 .addMapping(ProductRequestDto::getUnitPrice, Product::setUnitPrice)
                 .addMapping(ProductRequestDto::getExpiryDate, Product::setExpiryDate)
-              .addMapping(ProductRequestDto::getStockId, Product::setStockId)
               .addMapping(ProductRequestDto::getDescription, Product::setDescription)
               .addMapping(ProductRequestDto::getCategory, Product::setCategory)
-        .addMapping(ProductRequestDto::getStockId, Product::setStockId)
-        .addMapping(ProductRequestDto::getManufacturer, Product::setManufacturer);
 
-             
+        .addMapping(ProductRequestDto::getManufacturer, Product::setManufacturer)
+
+            
+              .addMapping(ProductRequestDto::getStockId, Product::setStockId);
+        
+
               
 
         // Mapping from Product to ProductResponseDto
@@ -40,13 +42,12 @@ public class ModelMapperConfig {
                 .addMapping(Product::getName, ProductResponseDto::setName)
                 .addMapping(Product::getUnitPrice, ProductResponseDto::setUnitPrice)
                 .addMapping(Product::getExpiryDate, ProductResponseDto::setExpiryDate)
-                .addMapping(Product::getDescription, ProductResponseDto::setDescription)
-               .addMapping(Product::getStockId, ProductResponseDto::setStockId)
+               .addMapping(Product::getDescription, ProductResponseDto::setDescription)
               .addMapping(Product::getCategory, ProductResponseDto::setCategory)
                 .addMapping(Product::getQuantityInStock, ProductResponseDto::setQuantityInStock)
-              .addMapping(Product::getManufacturer, ProductResponseDto::setManufacturer);
+              .addMapping(Product::getManufacturer, ProductResponseDto::setManufacturer)
+                .addMapping(Product::getStockId, ProductResponseDto::setStockId);
 
-        
 
                 
 
@@ -54,6 +55,8 @@ public class ModelMapperConfig {
         modelMapper.createTypeMap(StockRequestDTO.class, Stock.class)
                 .addMapping(StockRequestDTO::getQuantityAvailable, Stock::setQuantityAvailable)
                 .addMapping(StockRequestDTO::getLastUpdated, Stock::setLastUpdated);
+        
+        
                 
         
         //Mapping from stock to StockResponseDTO
