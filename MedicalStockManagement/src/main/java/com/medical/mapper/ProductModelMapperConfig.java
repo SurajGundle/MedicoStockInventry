@@ -4,16 +4,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.medical.entity.Product;
-import com.medical.entity.Stock;
 import com.medical.requestDTO.ProductRequestDto;
-import com.medical.requestDTO.StockRequestDTO;
 import com.medical.responseDTO.ProductResponseDto;
-import com.medical.responseDTO.StockResponseDTO;
+
 
 
 
 @Configuration
-public class ModelMapperConfig {
+public class ProductModelMapperConfig {
 
     @Bean
     public ModelMapper modelMapper() {
@@ -51,21 +49,7 @@ public class ModelMapperConfig {
 
                 
 
-        // Mapping from StockRequestDTO to Stock
-        modelMapper.createTypeMap(StockRequestDTO.class, Stock.class)
-                .addMapping(StockRequestDTO::getQuantityAvailable, Stock::setQuantityAvailable)
-                .addMapping(StockRequestDTO::getLastUpdated, Stock::setLastUpdated);
         
-        
-                
-        
-        //Mapping from stock to StockResponseDTO
-        modelMapper.createTypeMap(Stock.class, StockResponseDTO.class)
-        .addMapping(Stock::getStockId, StockResponseDTO::setStockId)
-        .addMapping(Stock::getQuantityAvailable, StockResponseDTO::setQuantityAvailable)
-        .addMapping(Stock::getLastUpdated, StockResponseDTO::setLastUpdated);
-        
-         
         return modelMapper;
     
     }

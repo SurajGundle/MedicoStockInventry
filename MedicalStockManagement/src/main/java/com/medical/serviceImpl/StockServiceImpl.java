@@ -28,8 +28,7 @@ public class StockServiceImpl implements StockService {
 	@Override
 	public StockResponseDTO addStock(StockRequestDTO stockRequestDTO) throws StockException {
 		Stock stock= modelMapper.map(stockRequestDTO, Stock.class);
-		// for (Product product : stock.getProducts()) {
-			//  }
+		
 		Stock saved=stockRepository.save(stock);
 		return modelMapper.map(saved, StockResponseDTO.class);
 	}

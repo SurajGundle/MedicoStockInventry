@@ -2,7 +2,6 @@ package com.medical.requestDTO;
 
 import java.time.LocalDate;
 
-import com.medical.entity.Stock;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

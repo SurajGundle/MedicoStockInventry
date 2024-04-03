@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.medical.entity.Product;
 import com.medical.exception.ProductException;
-import com.medical.exception.StockException;
+
 import com.medical.repository.ProductRepository;
 
 import com.medical.requestDTO.ProductRequestDto;
 import com.medical.responseDTO.ProductResponseDto;
-import com.medical.repository.StockRepository;
+
 
 import com.medical.service.ProductService;
 
@@ -24,9 +24,7 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepository productRepository;
 	
-	@Autowired
-	private StockRepository stockRepository;
-
+	
 @Autowired
 ModelMapper modelMapper;
 @Override

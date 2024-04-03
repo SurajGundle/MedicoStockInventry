@@ -2,8 +2,6 @@ package com.medical.responseDTO;
 
 import java.time.LocalDate;
 
-import com.medical.entity.Product;
-import com.medical.requestDTO.ProductRequestDto;
 
 import lombok.Data;
 

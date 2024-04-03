@@ -20,7 +20,7 @@ public class StockRequestDTO {
 	private Integer quantityAvailable;
 	private LocalDateTime lastUpdated;
 	private List<Product> products;
-	
+	private Integer supplierId;
 	
 
 }

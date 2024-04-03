@@ -15,7 +15,7 @@ public class StockResponseDTO {
 	private LocalDateTime lastUpdated;
 	private List<Product> products;
 	
-	
+	private Integer supplierId;
 
 
 }
