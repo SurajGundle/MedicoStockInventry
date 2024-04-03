@@ -2,12 +2,10 @@ package com.medical.service;
 
 import java.util.List;
 
-import com.medical.entity.Product;
+
 import com.medical.exception.ProductException;
 import com.medical.requestDTO.ProductRequestDto;
 import com.medical.responseDTO.ProductResponseDto;
-
-import com.medical.exception.StockException;
 
 
 
