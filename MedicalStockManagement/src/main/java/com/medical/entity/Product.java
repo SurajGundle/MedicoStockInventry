@@ -2,6 +2,7 @@ package com.medical.entity;
 
 import java.time.LocalDate;
 
+import com.medical.requestDTO.ProductRequestDto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

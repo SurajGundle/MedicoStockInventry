@@ -4,17 +4,23 @@ import java.util.List;
 
 import com.medical.entity.Product;
 import com.medical.exception.ProductException;
+import com.medical.requestDTO.ProductRequestDto;
+import com.medical.responseDTO.ProductResponseDto;
+
 import com.medical.exception.StockException;
 
 
-public interface ProductService {
-	Product getProductById(Integer productId) throws ProductException;
-	Product UpdateProductById(Integer productId, Product product)throws ProductException;
 
-	Product addProduct(Product product) throws ProductException,StockException; 
-	String deleteProductById(Integer productId)throws ProductException;
-	List<Product> getAllProduct() throws ProductException; 
+public interface ProductService {
 	
+	
+	 
+	  List<ProductResponseDto> getAllProducts() ;
+	  ProductResponseDto updateProduct(Integer productId, ProductRequestDto productRequestDto) throws ProductException;
+	  ProductResponseDto getProductById(Integer productId) throws ProductException;
+	  String deleteProductById(Integer productId)throws ProductException;
+	List<ProductResponseDto> createProduct(List<ProductRequestDto> productRequestDtos);
+	  
 	
 	
 	

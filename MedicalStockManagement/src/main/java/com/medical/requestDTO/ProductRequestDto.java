@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductRequestDto {
-	
+	     private Integer productId;
 	    private String name;
 	    private String description;
 	    private String manufacturer;
