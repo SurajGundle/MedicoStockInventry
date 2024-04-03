@@ -30,5 +30,5 @@ public class Stock {
 	@OneToMany(mappedBy = "stockId", cascade = CascadeType.ALL)
 	//@OneToMany(mappedBy="stock",cascade=CascadeType.ALL)
 	 private List<Product> products = new ArrayList<>();
-
+       
 }
