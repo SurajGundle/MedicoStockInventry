@@ -70,8 +70,8 @@ public class StockServiceImpl implements StockService {
 
 		    Stock existingStock = opt.get();
 		    existingStock.setStockName(stockRequestDTO.getStockName());
-		    existingStock.setQuantityAvailable(stockRequestDTO.getQuantityAvailable());
-		    existingStock.setLastUpdated(stockRequestDTO.getLastUpdated());
+//		    existingStock.setQuantityAvailable(stockRequestDTO.getQuantityAvailable());
+//		    existingStock.setLastUpdated(stockRequestDTO.getLastUpdated());
 		   
 		    try {
 		    	stockRepository.save(existingStock);

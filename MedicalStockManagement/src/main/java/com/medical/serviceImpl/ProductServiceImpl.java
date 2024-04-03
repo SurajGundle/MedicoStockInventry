@@ -50,7 +50,7 @@ public ProductResponseDto updateProduct(Integer productId, ProductRequestDto pro
     existingProduct.setName(productRequestDto.getName());
 
     existingProduct.setUnitPrice(productRequestDto.getUnitPrice());
-    existingProduct.setExpiryDate(productRequestDto.getExpiryDate());
+  
     existingProduct.setQuantityInStock(productRequestDto.getQuantityInStock());
 
     productRepository.save(existingProduct);
@@ -87,7 +87,7 @@ public List<ProductResponseDto> createProduct(List<ProductRequestDto> productReq
 	  List<ProductResponseDto> productResponseDto = new ArrayList<>();
     for (ProductRequestDto productRequest : productRequestDto) {
         Product product = modelMapper.map(productRequest, Product.class); 
-          product.setProductId(productRequest.getProductId()); 
+          
           productRepository.save(product);
           productResponseDto.add(modelMapper.map(product, ProductResponseDto.class));
     }

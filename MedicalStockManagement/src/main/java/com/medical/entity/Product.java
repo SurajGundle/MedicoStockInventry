@@ -1,14 +1,12 @@
 package com.medical.entity;
 
-import java.time.LocalDate;
-
-
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,15 +23,14 @@ public class Product {
 	    private String name;
 	    private String description;
 	    private String manufacturer;
-	    private LocalDate expiryDate;
+	    private Date expiryDate;
 	    private double unitPrice;
 	    private int quantityInStock;
-	    private String category;
-	    private String batchNumber;
+	    private Category category;
 	    
-	   // @ManyToOne
-	    @JoinColumn(name = "stockId") 
-	   private Integer stockId;
-	   
+	    @ManyToOne
+	    private Stock stock;
 
+	    @ManyToOne
+	    private Supplier supplier;
 }

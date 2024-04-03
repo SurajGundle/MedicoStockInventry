@@ -1,10 +1,8 @@
 package com.medical.entity;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,9 +24,9 @@ public class Supplier {
    private  Integer supplierId;
     private String name;
     private Integer  orderQuatity; 
-    private LocalDate orderDate; 
-	//@OneToMany(mappedBy = "supplierId", cascade = CascadeType.ALL)
-	//  private List<Stock> stocks = new ArrayList<>();
-	
+    private Date orderDate; 
+    
+    @OneToMany(mappedBy = "supplier")
+    private List<Product> products;
 	
 }

@@ -11,7 +11,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductRequestDto {
-	     private Integer productId;
+	
+	/*
+	 *   private String name;
+	    private String description;
+	    private String manufacturer;
+	    private Date expiryDate;
+	    private double unitPrice;
+	    private int quantityInStock;
+	    private String category;
+	    private Stock stock;
+	    private Supplier supplier;
+	    */
 	    private String name;
 	    private String description;
 	    private String manufacturer;
@@ -19,10 +30,10 @@ public class ProductRequestDto {
 	    private double unitPrice;
 	    private int quantityInStock;
 	    private String category;
-	    private String batchNumber;
+	    private Integer stock;
 
 	    private Integer stockId;
-	   // private Stock stock;
+	    private Integer supplierId;
 
 	  
 }
