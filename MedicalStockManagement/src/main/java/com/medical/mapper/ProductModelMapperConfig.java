@@ -13,7 +13,8 @@ import com.medical.responseDTO.ProductResponseDto;
 @Configuration
 public class ProductModelMapperConfig {
 
-    @Bean
+   // @Bean
+    @Bean(name = "productModelMapper")
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
 
