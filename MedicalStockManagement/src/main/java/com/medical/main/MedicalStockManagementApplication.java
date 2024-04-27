@@ -1,4 +1,4 @@
-package com.medical;
+package com.medical.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
