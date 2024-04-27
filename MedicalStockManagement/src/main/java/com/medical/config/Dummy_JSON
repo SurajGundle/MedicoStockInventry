@@ -1,0 +1,39 @@
+{
+  "stock": {
+    "stockName": "Example Stock",
+    "quantityAvailable": 500,
+    "lastUpdated": "2024-03-07T10:00:00" // LocalDateTime format: yyyy-MM-dd'T'HH:mm:ss
+  },
+  "products": [
+    {
+      "name": "Product 1",
+      "description": "Description for Product 1",
+      "manufacturer": "Manufacturer A",
+      "expiryDate": "2024-12-31",
+      "unitPrice": 10.99,
+      "quantityInStock": 50,
+      "category": "Category A",
+      "batchNumber": "BATCH001"
+    },
+    {
+      "name": "Product 2",
+      "description": "Description for Product 2",
+      "manufacturer": "Manufacturer B",
+      "expiryDate": "2025-06-30",
+      "unitPrice": 15.99,
+      "quantityInStock": 100,
+      "category": "Category B",
+      "batchNumber": "BATCH002"
+    },
+    {
+      "name": "Product 3",
+      "description": "Description for Product 3",
+      "manufacturer": "Manufacturer C",
+      "expiryDate": "2024-09-15",
+      "unitPrice": 8.49,
+      "quantityInStock": 75,
+      "category": "Category C",
+      "batchNumber": "BATCH003"
+    }
+  ]
+}
