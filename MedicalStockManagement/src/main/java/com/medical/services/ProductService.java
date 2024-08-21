@@ -5,6 +5,7 @@ import java.util.List;
 import com.medical.RESTFUL.dto.request.ProductRequestDto;
 import com.medical.RESTFUL.dto.response.ProductResponseDto;
 import com.medical.RESTFUL.error.handler.ProductException;
+import com.medical.entities.Product;
 
 public interface ProductService {
 
@@ -16,6 +17,6 @@ public interface ProductService {
 
 	String deleteProductById(Integer productId) throws ProductException;
 
-	List<ProductResponseDto> createProduct(List<ProductRequestDto> productRequestDtos);
+	Product addNewProduct(Product product);
 
 }

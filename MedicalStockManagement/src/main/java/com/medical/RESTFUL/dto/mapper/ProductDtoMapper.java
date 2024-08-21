@@ -1,6 +1,8 @@
 package com.medical.RESTFUL.dto.mapper;
 
-public class ProductModelMapperConfig {}
+public class ProductDtoMapper {
+	
+}
 
 
 

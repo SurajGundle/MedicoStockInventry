@@ -16,17 +16,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
 public class Supplier {
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private  Integer supplierId;
-    private String name;
-    private Integer  orderQuatity; 
-    private Date orderDate; 
-    
-    @OneToMany(mappedBy = "supplier")
-    private List<Product> products;
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Integer supplierId;
+
+	    private String name;
+	    private Integer orderQuantity;
+	    private Date orderDate; 
+	    
+	    @OneToMany(mappedBy = "supplier")
+	    private List<Product> products;
 	
 }

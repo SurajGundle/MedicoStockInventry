@@ -74,7 +74,7 @@ public class SupplierServiceImpl implements SupplierService{
 
 			    Supplier existSupplier = opt.get();
 			    existSupplier.setName(suppliertRequestDto.getName());
-			    existSupplier.setOrderQuatity(suppliertRequestDto.getOrderQuatity());
+//			    existSupplier.setOrderQuatity(suppliertRequestDto.getOrderQuatity());
 			  //  existSupplier.setOrderDate(suppliertRequestDto.getOrderDate());
 			//    existSupplier.setStocks(suppliertRequestDto.getStock());
 			    

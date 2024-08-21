@@ -17,13 +17,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Stock {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer stockId;
+	    
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Integer stockId;
 
-	private String stockName;
-	private Date lastUpdated;
-	@OneToMany(mappedBy = "stock")
-	private List<Product> products;
+	    private String stockName;
+	    private Date lastUpdated;
+
+	    @OneToMany(mappedBy = "stock")
+	    private List<Product> products;
 
 }
